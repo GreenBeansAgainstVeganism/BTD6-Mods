@@ -4,7 +4,7 @@ Adds the Wall Factory, a support tower which places obstacles on the track, much
 Full Upgrade Descriptions:
 | Path | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Tier 5 |
 | --- | --- | --- | --- | --- | --- |
-| Path 1: Damage | Spiky Walls | Self Destruct | Flame Ward | Elastic Deformation | Pillars of Justice |
+| Path 1: Damage | Spiky Walls | Self Destruct | Flame Ward | Elastic Deformation | Gates of Judgement |
 | Path 2: Capacity | Faster Production | Rebound | Durable Alloys | Energy Shield | True Area Denial System |
 | Path 3: Moabs | Thicker Walls | Heavier Walls | Wider Walls | Taller Walls | The Great Wall |
 
