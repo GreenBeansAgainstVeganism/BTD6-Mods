@@ -70,7 +70,6 @@
     <EmbeddedResource Include="TowerImg\Icon\WallFactory100Icon.png" />
     <EmbeddedResource Include="TowerImg\Portrait\WallFactory200.png" />
     <EmbeddedResource Include="TowerImg\Icon\WallFactory200Icon.png" />
-    <EmbeddedResource Include="WallDisplay1.png" />
     <EmbeddedResource Include="TowerImg\WallFactoryIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TowerImg\Portrait\WallFactory400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory500Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory500.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

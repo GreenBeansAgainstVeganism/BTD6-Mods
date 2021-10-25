@@ -87,14 +87,14 @@ namespace WallFactory
     public override string Portrait => "WallFactoryIcon";
   }
 
-  public class WallDisplay1 : ModDisplay
+  /*public class WallDisplay1 : ModDisplay
   {
     public override string BaseDisplay => Generic2dDisplay;
     public override void ModifyDisplayNode(UnityDisplayNode node)
     {
       Set2DTexture(node, "WallDisplay1");
     }
-  }
+  }*/
 
   //  Path 1 Upgrades
   public class SpikyWalls : ModUpgrade<WallFactory>
@@ -199,7 +199,7 @@ namespace WallFactory
     public override string Name => "Elastic Deformation";
     public override string DisplayName => "Elastic Deformation";
     public override string Description => "Advanced impact control systems cause all bloon fortifications to shatter instantly on contact with these walls, and also increase damage against ceramics, leads, and DDTs.";
-    public override int Cost => 8400;
+    public override int Cost => 7200;
     public override int Path => TOP;
     public override int Tier => 4;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -215,12 +215,12 @@ namespace WallFactory
     public override string Icon => "WallFactory400Icon";
     public override string Portrait => "WallFactory400";
   }
-  public class PillarsOfJudgement : ModUpgrade<WallFactory>
+  public class GatesOfJudgement : ModUpgrade<WallFactory>
   {
-    public override string Name => "Pillars Of Judgement";
-    public override string DisplayName => "Pillars Of Judgement";
+    public override string Name => "Gates of Judgement";
+    public override string DisplayName => "Gates of Judgement";
     public override string Description => "The monkeys went a little overboard and now instead of fire, walls release a shower of deadly homing defense lasers whenever a bloon dares to tread near them.";
-    public override int Cost => 52000;
+    public override int Cost => 51000;
     public override int Path => TOP;
     public override int Tier => 5;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -233,9 +233,6 @@ namespace WallFactory
       projectile.RemoveBehavior<CreateProjectileOnContactModel>();
       var laser = Game.instance.model.GetTowerFromId("DartlingGunner-300").GetAttackModel().weapons[0].projectile.Duplicate();
       var tracker = Game.instance.model.GetTowerFromId("Adora").GetAttackModel().weapons[0].projectile.GetBehavior<AdoraTrackTargetModel>().Duplicate();
-      //var pb = flame.GetBehavior<CreateProjectileOnContactModel>();
-      //var sound = flame.GetBehavior<CreateSoundOnProjectileCollisionModel>();
-      //var effect = flame.GetBehavior<CreateEffectOnContactModel>();
       laser.GetDamageModel().immuneBloonProperties = BloonProperties.None;
       laser.RemoveBehavior<TravelStraitModel>();
       laser.AddBehavior(tracker);
@@ -271,7 +268,8 @@ namespace WallFactory
           false, effect.effectModel);
       projectile.AddBehavior(eB);*/
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory500Icon";
+    public override string Portrait => "WallFactory500";
   }
   //  Path 2 Upgrades
   public class FasterConstruction : ModUpgrade<WallFactory>
@@ -308,10 +306,10 @@ namespace WallFactory
     //public override string Icon => "";
   }
 
-  public class DurableWalls : ModUpgrade<WallFactory>
+  public class DurableAlloys : ModUpgrade<WallFactory>
   {
-    public override string Name => "Durable Walls";
-    public override string DisplayName => "Durable Walls";
+    public override string Name => "Durable Alloys";
+    public override string DisplayName => "Durable Alloys";
     public override string Description => "Walls last much longer and can carry over between rounds.";
     public override int Cost => 1100;
     public override int Path => MIDDLE;
@@ -456,7 +454,7 @@ namespace WallFactory
     public override string Name => "Taller Walls";
     public override string DisplayName => "Taller Walls";
     public override string Description => "Walls are now capable of holding even high-altitude Moab-class bloons at bay.";
-    public override int Cost => 13000;
+    public override int Cost => 12500;
     public override int Path => BOTTOM;
     public override int Tier => 4;
     public override void ApplyUpgrade(TowerModel towerModel)
