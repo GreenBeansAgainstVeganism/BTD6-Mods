@@ -1,6 +1,8 @@
 # Wall Factory Mod
 Adds the Wall Factory, a support tower which places obstacles on the track, much like a spike factory, but these ones knock bloons backward, preventing them from moving past.
 
+![Upgrades](upgrades.png)
+
 Full Upgrade Descriptions:
 | Path | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Tier 5 |
 | --- | --- | --- | --- | --- | --- |
