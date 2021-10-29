@@ -90,6 +90,66 @@
   <ItemGroup>
     <EmbeddedResource Include="TowerImg\Portrait\WallFactory500.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory010Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory020Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory030Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory030.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory040Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory050Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory050.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory001Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory002Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory003Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory004Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Portrait\WallFactory005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerImg\Icon\WallFactory005Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>

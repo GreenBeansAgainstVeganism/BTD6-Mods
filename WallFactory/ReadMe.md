@@ -4,9 +4,9 @@ Adds the Wall Factory, a support tower which places obstacles on the track, much
 Full Upgrade Descriptions:
 | Path | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Tier 5 |
 | --- | --- | --- | --- | --- | --- |
-| Path 1: Damage | Spiky Walls | Self Destruct | Flame Ward | Elastic Deformation | Gates of Judgement |
-| Path 2: Capacity | Faster Production | Rebound | Durable Alloys | Energy Shield | True Area Denial System |
-| Path 3: Moabs | Thicker Walls | Heavier Walls | Wider Walls | Taller Walls | The Great Wall |
+| Path 1: Damage | Spiky Walls: Walls deal +1 damage on contact. | Self Destruct: Walls erupt violently upon destruction. | Flame Ward: The best defense is a good offense! Walls are now equipped with pressure-sensitive flamethrowers. | Elastic Deformation: Advanced impact amplification systems cause all bloon fortifications to shatter instantly on contact with these walls, and also increase damage against ceramics, leads, and DDTs. | Gates of Judgement: The monkeys went a little overboard and now instead of fire, walls release a shower of deadly homing defense lasers whenever a bloon dares to tread near them. |
+| Path 2: Capacity | Faster Production: Builds walls faster. | Rebound: Bloons are sent flying much further away on impact. | Durable Alloys: Walls last much longer and can carry over between rounds. | Energy Shield: Ability: Erects a forcefield around the factory for a short while which repels bloons back along the track and slows heavier bloons. | True Area Denial System: Vastly amplified range of influence, wall construction speed, and energy shield potency. Energy shield stays up longer as well. |
+| Path 3: Moabs | Thicker Walls: Walls can endure more punishment before breaking. | Heavier Walls: Walls can successfully hold back heavier bloons. | Wider Walls: Walls have a greater deploy range, can sustain more damage and are doubly resistant to small bloons. | Taller Walls: Walls are now capable of holding even high-altitude Moab-class bloons at bay. | The Great Wall: Creates a nearly impenetrable barrier against Moab-class bloons. |
 
 Notes on design:
 This is a modded tower, and as such will never be as balanced as official game content. That said, I did put a lot of thinking into designing this tower in such a way that it integrates well into the rest of the game. Here are my thoughts on the tower: (warning: intense nerdiness incoming)

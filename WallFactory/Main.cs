@@ -77,6 +77,8 @@ namespace WallFactory
       //projectile.RemoveBehavior<SetSpriteFromPierceModel>();
       projectile.RemoveBehavior<RotateModel>();
       projectile.GetDamageModel().damage = 1;
+      /*projectile.GetDamageModel().immuneBloonProperties = BloonProperties.Lead;
+      projectile.RemoveBehavior<DestroyWhenHitImmuneModel>();*/
       //projectile.ApplyDisplay<WallDisplay1>();
       //projectile.display = Game.instance.model.GetTowerFromId("SpikeFactory-205").GetAttackModel().weapons[0].projectile.GetBehavior<DisplayModel>().display;
       projectile.collisionPasses = new int[] { -1, 0 };
@@ -119,7 +121,7 @@ namespace WallFactory
     public override string Name => "Self Destruct";
     public override string DisplayName => "Self Destruct";
     public override string Description => "Walls erupt violently upon destruction.";
-    public override int Cost => 1400;
+    public override int Cost => 1300;
     public override int Path => TOP;
     public override int Tier => 2;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -157,7 +159,7 @@ namespace WallFactory
   {
     public override string Name => "Flame Ward";
     public override string DisplayName => "Flame Ward";
-    public override string Description => "The best defense is a good offense! Walls are now equipped with pressure-sensitive flame throwers.";
+    public override string Description => "The best defense is a good offense! Walls are now equipped with pressure-sensitive flamethrowers.";
     public override int Cost => 3800;
     public override int Path => TOP;
     public override int Tier => 3;
@@ -165,6 +167,7 @@ namespace WallFactory
     {
       var attackModel = towerModel.GetAttackModel();
       var projectile = attackModel.weapons[0].projectile;
+      //projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
       /*var mineProj = Game.instance.model.GetTowerFromId("SpikeFactory-400").GetAttackModel().weapons[0].projectile.GetBehavior<CreateProjectileOnExpireModel>().projectile.Duplicate();
       var mineEm = Game.instance.model.GetTowerFromId("SpikeFactory-400").GetAttackModel().weapons[0].projectile.GetBehavior<CreateProjectileOnExpireModel>().emission.Duplicate();
       projectile.AddBehavior(new CreateProjectileOnExpireModel("FailureContingency",mineProj,mineEm,false));*/
@@ -198,7 +201,7 @@ namespace WallFactory
   {
     public override string Name => "Elastic Deformation";
     public override string DisplayName => "Elastic Deformation";
-    public override string Description => "Advanced impact control systems cause all bloon fortifications to shatter instantly on contact with these walls, and also increase damage against ceramics, leads, and DDTs.";
+    public override string Description => "Advanced impact amplification systems cause all bloon fortifications to shatter instantly on contact with these walls, and also increase damage against ceramics, leads, and DDTs.";
     public override int Cost => 7200;
     public override int Path => TOP;
     public override int Tier => 4;
@@ -285,14 +288,15 @@ namespace WallFactory
       var attackModel = towerModel.GetAttackModel();
       attackModel.weapons[0].rate /= 1.5f;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory010Icon";
+    public override string Portrait => "WallFactory010";
   }
 
   public class Rebound : ModUpgrade<WallFactory>
   {
     public override string Name => "Rebound";
     public override string DisplayName => "Rebound";
-    public override string Description => "Bloons are sent flying further away.";
+    public override string Description => "Bloons are sent flying much further away on impact.";
     public override int Cost => 850;
     public override int Path => MIDDLE;
     public override int Tier => 2;
@@ -303,7 +307,8 @@ namespace WallFactory
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().lightMultiplier = 1.6f;
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().mutator.lightMultiplier = 1.6f;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory020Icon";
+    public override string Portrait => "WallFactory020";
   }
 
   public class DurableAlloys : ModUpgrade<WallFactory>
@@ -320,7 +325,8 @@ namespace WallFactory
       attackModel.weapons[0].projectile.GetBehavior<AgeModel>().lifespan *= 2f;
       attackModel.weapons[0].projectile.GetBehavior<AgeModel>().rounds += 1;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory030Icon";
+    public override string Portrait => "WallFactory030";
   }
 
   public class EnergyShield : ModUpgrade<WallFactory>
@@ -328,7 +334,7 @@ namespace WallFactory
     public override string Name => "Energy Shield";
     public override string DisplayName => "Energy Shield";
     public override string Description => "Ability: Erects a forcefield around the factory for a short while which repels bloons back along the track and slows heavier bloons.";
-    public override int Cost => 4500;
+    public override int Cost => 4000;
     public override int Path => MIDDLE;
     public override int Tier => 4;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -354,9 +360,11 @@ namespace WallFactory
       //ability.GetBehavior<ActivateAttackModel>().attacks[0].GetBehavior<CreateEffectWhileAttackingModel>().effectModel.scale *= 2f;
       ability.GetBehavior<ActivateAttackModel>().lifespan = 10f;
       ability.cooldown = 30f;
+      ability.icon = GetSpriteReference("WallFactory040Icon");
       towerModel.AddBehavior(ability);
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory040Icon";
+    public override string Portrait => "WallFactory040";
   }
 
   public class TheTrueAreaDenialSystem : ModUpgrade<WallFactory>
@@ -364,7 +372,7 @@ namespace WallFactory
     public override string Name => "The True Area Denial System";
     public override string DisplayName => "The True Area Denial System";
     public override string Description => "Vastly increased range of influence, wall construction speed, and energy shield potency. Energy shield stays up longer as well.";
-    public override int Cost => 22000;
+    public override int Cost => 21500;
     public override int Path => MIDDLE;
     public override int Tier => 5;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -387,8 +395,10 @@ namespace WallFactory
       abilityProj.radius = towerModel.range + 10;
       abilityProj.pierce = 500;
       ability.GetBehavior<ActivateAttackModel>().lifespan = 15f;
+      ability.icon = GetSpriteReference("WallFactory050Icon");
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory050Icon";
+    public override string Portrait => "WallFactory050";
   }
 
   //  Path 3 Upgrades
@@ -405,7 +415,8 @@ namespace WallFactory
       var attackModel = towerModel.GetAttackModel();
       attackModel.weapons[0].projectile.pierce += 20;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory001Icon";
+    public override string Portrait => "WallFactory001";
   }
   public class HeavierWalls : ModUpgrade<WallFactory>
   {
@@ -420,14 +431,16 @@ namespace WallFactory
       var attackModel = towerModel.GetAttackModel();
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().heavyMultiplier = 1.25f;
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().mutator.heavyMultiplier = 1.25f;
+      //attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory002Icon";
+    public override string Portrait => "WallFactory002";
   }
   public class WiderWalls : ModUpgrade<WallFactory>
   {
     public override string Name => "Wider Walls";
     public override string DisplayName => "Wider Walls";
-    public override string Description => "Walls have a greater deploy range can sustain more damage and are extra resistant to small bloons.";
+    public override string Description => "Walls have a greater deploy range, can sustain more damage and are doubly resistant to small bloons.";
     public override int Cost => 2700;
     public override int Path => BOTTOM;
     public override int Tier => 3;
@@ -435,7 +448,7 @@ namespace WallFactory
     {
       var attackModel = towerModel.GetAttackModel();
       var projectile = attackModel.weapons[0].projectile;
-      towerModel.range += 10f;
+      towerModel.range += 15f;
       attackModel.range = towerModel.range;
       projectile.pierce += 70;
       projectile.AddBehavior(new CollideExtraPierceReductionModel("CeramicPierce", "Ceramic", 1, false));
@@ -446,15 +459,17 @@ namespace WallFactory
       projectile.AddBehavior(new CollideExtraPierceReductionModel("BadPierce", "Bad", 1, false));
       projectile.AddBehavior(new IgnoreInsufficientPierceModel("IgnorePierceCap"));
       projectile.scale *= 1.2f;
+      projectile.radius *= 1.2f;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory003Icon";
+    public override string Portrait => "WallFactory003";
   }
   public class TallerWalls : ModUpgrade<WallFactory>
   {
     public override string Name => "Taller Walls";
     public override string DisplayName => "Taller Walls";
     public override string Description => "Walls are now capable of holding even high-altitude Moab-class bloons at bay.";
-    public override int Cost => 12500;
+    public override int Cost => 13200;
     public override int Path => BOTTOM;
     public override int Tier => 4;
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -485,12 +500,15 @@ namespace WallFactory
       }
       projectile.GetDamageModel().damage += 1;
       projectile.pierce += 40;
-      projectile.AddBehavior(new DamageModifierForTagModel("MoabDamage", "Moabs", 1, 18, false, false));
+      projectile.AddBehavior(new DamageModifierForTagModel("MoabDamage", "Moabs", 1, 13, false, false));
+      projectile.scale *= 1.2f;
+      projectile.radius *= 1.2f;
 
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().moabMultiplier = 1.25f;
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().mutator.moabMultiplier = 1.25f;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory004Icon";
+    public override string Portrait => "WallFactory004";
   }
 
   public class TheGreatWall : ModUpgrade<WallFactory>
@@ -529,11 +547,14 @@ namespace WallFactory
       }
       projectile.pierce += 40;
       projectile.GetDamageModel().damage += 1;
-      projectile.GetBehavior<DamageModifierForTagModel>().damageAddative = 47;
+      projectile.GetBehavior<DamageModifierForTagModel>().damageAddative = 37;
+      projectile.scale *= 1.2f;
+      projectile.radius *= 1.2f;
 
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().moabMultiplier = 1.35f;
       attackModel.weapons[0].projectile.GetBehavior<KnockbackModel>().mutator.moabMultiplier = 1.35f;
     }
-    //public override string Icon => "";
+    public override string Icon => "WallFactory005Icon";
+    public override string Portrait => "WallFactory005";
   }
 }
