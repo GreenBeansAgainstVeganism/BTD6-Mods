@@ -65,7 +65,10 @@ namespace FingerGun
               {
                 //b.Damage(1.0f, null, false, false, false, null, BloonProperties.None, false, false, false, true);
                 //b.RecieveDamage(1.0f, null, false, false, false, null, false);
-                b.ExecuteDamageTask(1.0f, null, false, false, true, null, false);
+                if(!b.IsImmune(BloonProperties.Lead))
+                {
+                  b.ExecuteDamageTask(1.0f, null, false, false, true, null, false);
+                }
                 tickTimer = 3;
                 break;
               }
